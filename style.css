@@ -1,0 +1,26 @@
+.class-h1{
+    color: #00008b;
+    font-style: italic;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+body{
+    background-color:cornsilk;
+}
+
+#btn-hola{
+    font-style:italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: blue;
+    border: solid blue;
+    padding:45px;
+}
+
+.class-tabla{
+    font: italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 34px;
+    background-color: cyan;
+    border-style: solid groove;
+}
