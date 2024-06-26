@@ -1,0 +1,257 @@
+CSS
+Hoja de estilo en cascada.
+
+Permite darle estilo a un archivo html.
+
+Forma de enlazar archivos css a html:
+-Estilo en línea mediante el atributo style=""
+<p style="color: red"></p>
+-Estilo por archivo  externo a  traves de la etiqueta html<link>
+<link rel="stylesheet" type="text/css" href="">
+
+-Estilo por la etiqueta html<style>
+<style type="text/css"></style>
+-Mediante  @import
+
+la estructura del estilo de css es la siguiente:
+selector{
+	propiedad: valor;
+}
+
+-selector: elemento o elementos al que se le aplicaran el conjunto de propiedades.
+selector universal: *
+selector de nombre  de etiqueta: ejemplo h1
+selector por atributo clase : .nombre-clase 
+selector  por id de etiqueta: #id
+selector por atributo html: [atributo-personalizado="hola"]
+selector por descendientes: h2 p 
+selector por  seudoclases: b:hover
+
+-propiedad: la propiedad del elemento a la que  le   colocaremos el valor.
+
+Especificidad:
+Es la jerarquía en  la que se aplica estilo.
+primero: !important
+segundo: estilos en linea
+tercero: identificadores
+cuarto: clases, pseudoclases, atributos
+quinto: elementos, pseudoelementos
+
+Metodología BEM:
+Es saber identificar las clases con nombres descriptivos para 
+identificar el elemento que se está seleccionando.
+
+<div class="contact-form">
+	<p class="contact-form__p">
+		<h2 class="contact-form__p-h2"
+	</p>
+</div>
+
+Unidades de medida:
+En css haydos unidades de medida: 
+-relativas: son variables y dependen de  algo
+--rem
+--em: 1em = 16px default. 1em puede tomar el valorque  le demos aesa mismapropiedad enel contenedor.
+.contact-form {
+  font-size:  35px;
+}
+--viewport:todolo quesepuede ver  en  el   navegador
+.contact-form__h2 {
+    font-size: 5em;
+}
+-fijas: son las  que se establecen fijas desde un principio
+px, cm,  mm, pt
+
+propiedades de texto:
+    tamaño =  font-size: 2em;
+    Fuentes  =  font-family: Georgia;
+    distancia vertical entre  lineas  =   line-height: 2;
+    grosorde letras   = font-weight: normal;
+    font-stretch:  normal;
+    font-variant: small-caps;
+	color: red;
+
+-normalize.css:  archivo css que permite quitar los valores por defecto
+que coloca el navegador a las propiedades de diseño html
+
+Cajas en css:
+en linea: ocupan el tamaño   del elemento
+nose le puede modificar propiedad height  o width
+en bloque:se  ajustan alanchodel contenedor
+
+-display:propiedad que permite  cambiar el comportamiento  de  las  Cajas  
+
+-padding: es elespacio queexisteentreel texto y lacaja
+--padding left: espacion entre  el borde izquierdo y  el  texto
+--padding top: espacion entre  el borde superior y  el  texto
+--padding  right: espacio entre borde derechoy el texto
+--padding bottom:  espacio entre el borde inferior yel texto
+
+padding: 50px; colocar padding  es un  short hand property,
+lacualaplica elespacioatodoslosladosdelacaja.
+
+padding: 40px 45px 35px 20px;  
+
+margin: distancia  entre cajas
+
+bordes: 
+border-radius: redondear  el borde de la cajas
+border-radius: 10px;
+border: grosor 4px estilo solid color blue
+
+box model: modeloenelquesetrabajanlas cajas.
+-jerarquia:
+--content:conla propiedad line-height
+--padding:con la  propiedadpadding
+--border: conlapropiedad border
+--margin: conlapropiedad margin
+
+sombras:
+box-shadow: eje x 2px eje y  4px tamaño  de desenfoque  15px borde  0 color  0 
+  box-shadow: 2px 4px 15px 0 black;
+text-shadow: 2px 4px 15px blue;
+
+Rotar: rotar unacaja
+transform: rotate(90deg)
+
+Outline: genera un bordesin ocupar espacio real en el DOM
+outline: grosor 4px estilo solid color blue
+
+Position: se encarga  de posicionar(adquirirnuevaspropiedades) los  elementos.
+laspropiedadesqueadquiere unacajason:
+--top,left,right,bottom,z-index:posiciondelacajaenejez
+z-index: 3;semostrarádelantedelascajas con z-index menor.
+este tiene  conflictos entrepadresehijos.
+-static:
+-relative:
+-absolute: 
+
+-fixed:
+-sticky:
+
+opacity: controla la opacidad
+
+display: modifica el comportamiento d elascajas
+--block
+--inline
+
+--inline-block
+
+overflow: manejar lo  que sobra de
+un contenedor
+--auto:
+-scroll:
+
+Seudoelementos: elementos que solo afectan de manera visual
+. Se le aplican a elementos
+--first-line: se le aplica a la primera linea
+--first-letter: se le aplica a la primera letra
+--placeholder: se le  aplica al  texto que secoloca de
+indicación
+--selection: se le aplica a la seleccion del modeloenelquesetrabajanlas
+
+Transition: propiedad que permite cambiar el tiempo de 
+transición entre valores de una propiedad.
+transition: background 1s;
+
+Seudoclases: permiten escuchar eventos de los elementos html
+--:hover : escucha el elemento cuando el mouse está encima del elemento
+.caja1:hover{
+  background: blue;
+}
+--:link :cambia un link  que todavía no visitamos.
+--:visited : cambia un link cuando fue visitado el enlace.
+--:active: cuando se deja presionado un boton, se cambian los estilos.
+--:focus: es cuando  el elemento está en foco
+--:lang: es una funcion que permite aplicar estilo a la etiqueta de idioma especificada.
+
+Object-fit: se aplica para modificar las resoluciones de las imagenes.
+--contain: hace quelas resoluciones de las imagenes se ajusten al contenido.
+--cover: ajusta la imagen y recorta la imagen para ajustarse al contenedor
+--none: ajusta la imagen con los  valores por defecto de la imagen
+--scale-down: toma la propiedad que aplique la menor resolucion a la imagen
+
+Object-position: permite moverunaimagen paraque se  muestre mas el lado que se especifique en  la  propiedad
+--top
+--right
+--left
+--bottom
+
+cursor: permite cambiar la apariencia del cursor
+
+Colores: permite color el color de un elemento,
+ya sea especificandolo:
+hexadecimal: background-color: #f00;
+rgb: background-color: rgb(234,45,23);
+
+Responsive design: ajuste del contenido en diferentes
+resoluciones.
+
+Flexbox: es un modelo de diseño que permite distribuir eficientemente el espacio
+entre los elementos de un contenedor.
+
+-Eje principal y secundario:
+--eje principal main axis: es la direccion en la que los elementos flexibles se colocan, pudiendo ser 
+horizontal o vertical.
+--eje secundario cross axis: es perpendicular al eje principal.
+
+--flex-direction: permite cambiar la direccion del main axis
+---row: valor que permite que los elementos se comporten como  fila
+---column: valor que permite que los  elementos se  comporten como columna
+---row-reverse: hace que los elementos empiecen d e derecha a izquierda
+---column-reverse: hace que los elementos del contenedor se muestren de abajo para arriba
+--flex-wrap: wrap; permite ajustar el contenido de un contenedor sin cambiar la resolucion de los elementos
+--min-width: permite mantener el ancho minimo de un elemento
+--flex-flow: column wrap permite abreviar las propiedader de flex-direction y flex-wrap
+---wrap-reverse: valor de flex-wrap que permite invertir la direccion en la que se encajan los
+elementos
+---nowrap: sirve para indicar que no se quiere ajustar los elementos.
+--justify-content: propiedad que permite centrar contenido (main axis)
+---center: valor de justify-content que permite centrar los elementos en el contenedor
+---space-around: valor de justify-content que permite darle un margen automatico a todos los elementos
+---space-between:valor de justify-content que permite darle espacio entre cajas.
+---space-evenly: valor de justify-content que permite darle el mismo margen a todos los elemntos
+--align-items: propiedad que alinea elementos en una sola linea de elemntos Flexbox
+---center: valor de align-items que  permite centrar el contenido en el contenedor
+---flex-end: valor de align-item que  alinea los elementos  flexbox al  final  del contenedor
+---flex-start: valorde align-item  que permite alinear arriba los  elmentos de  un  contenedor flex y 
+permite que los  elementos flexno se  estiren a  lo largodel  cross axis
+--align-content: propiedad usada  para  alinear elementos flex de  varias lineas
+--align-self: esta propiedad permite asignarlevalores flex  aun  solo elemento flex
+--margin: dentro de un contenedor flex, margin se comporta de una forma  que permite mover  un  elemento
+deuna  forma diferente.
+---flex-grow: propiedadquepermite tomar el espacio sobrante y  lo reparte entre todas las cajas.
+el valor que le  coloquemos indicará entre cuantas partes  se dividirá el tamaño de las cajas.
+---flex-basis: propiedad especial de  flex que funciona igual que width.
+---flex-shrink: propiedad que permite indicar la caja que cederá mas espacio cuandono  haya espacio disponible
+---flex: propiedad que agrupa las propiedades flex-grow, flex-shrink, flex-basis
+---order: propiedad que determina el  orden de colocacion en  el main axis
+----linear-gradiente: permite colocar un degradado en un background (background: linear-gradient(to bottom, transparent, #fff))
+
+
+Grid: es un estilo de layout en el cual trabajamos el diseño de la página con grillas. 
+Es una propiedad de display.
+
+--Grid container: es el contenedor del layout de Grid
+--grid item: es un elemento dentro del contenedor grid container
+--grid cell: es cada recuadro del grid container
+--grid tracks: column  y row
+--grid area: es un conjuto de celdas agrupadas para formar un area rectangular.
+--grid line: column line y row line. Son lineas que separan las columns y rows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
